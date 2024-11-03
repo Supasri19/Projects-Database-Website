@@ -1,0 +1,538 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  line-height: 1.6;
+  color: #333;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Header Styles */
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background: #fff;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  z-index: 1000;
+}
+
+.header .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 80px;
+}
+
+.header__logo {
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+.header__nav ul {
+  display: flex;
+  list-style: none;
+  gap: 2rem;
+}
+
+.header__nav a {
+  text-decoration: none;
+  color: #333;
+  font-weight: 500;
+  transition: color 0.3s;
+}
+
+.header__nav a:hover {
+  color: #666;
+}
+
+.hero {
+  position: relative;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  text-align: left;
+  padding: 0 5%;
+  color: #fff;
+  overflow: hidden; /* ป้องกันวิดีโอที่เกินขอบเขตของ .hero */
+}
+
+.hero video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -1; /* ให้วิดีโออยู่ด้านหลังเนื้อหา */
+  opacity: 0.5; /* ปรับความทึบเพื่อให้เนื้อหาอ่านได้ง่ายขึ้น */
+}
+
+.hero__title {
+  font-size: 4rem;
+  font-weight: 700;
+  color: #000;
+  margin-bottom: 1rem;
+}
+
+.hero__description {
+  font-size: 1.2rem;
+  color: #000;
+  margin-bottom: 2rem;
+
+}
+
+.hero__cta {
+  display: inline-block;
+  padding: 1rem 2rem;
+  background: #000;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 4px;
+  font-weight: 500;
+  transition: background 0.3s;
+}
+
+.hero__cta:hover {
+  background: #f0f0f0;
+}
+
+.contens{
+  display: inline-block;
+  padding: 3rem 5rem;
+  color: #000;
+  text-decoration: none;
+  border-radius: 4px;
+  font-weight: 500;
+  transition: background 0.3s;
+}
+
+.con-ten{
+  font-size: 2rem;
+  font-weight: 600;
+  justify-content: center;
+  margin: 0;
+}
+
+.con-info{
+  font-size: 4rem;
+  font-weight: 700;
+  color: #000;
+  padding:2rem 3rem ;
+  margin-bottom: 1rem;
+}
+
+.type{
+  font-size: 4rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+   
+}
+.page-wrapper {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+/* Header Section */
+.showcase-header {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.main-title {
+    font-size: 2.5rem;
+    color: #333;
+    margin-bottom: 1.5rem;
+}
+
+.intro-text {
+    color: #666;
+    line-height: 1.6;
+    max-width: 800px;
+    margin: 0 auto 1rem;
+}
+
+/* Types Section */
+.section-title {
+    text-align: center;
+    font-size: 2rem;
+    color: #333;
+    margin-bottom: 2rem;
+}
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    padding: 1rem;
+}
+
+.product-card {
+    background: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.product-card:hover {
+    transform: translateY(-5px);
+}
+
+.product-image {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.product-info {
+    padding: 1.5rem;
+    text-align: center;
+}
+
+.product-name {
+    font-size: 1.25rem;
+    color: #333;
+    margin-bottom: 0.5rem;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .page-wrapper {
+        padding: 1rem;
+    }
+
+    .main-title {
+        font-size: 2rem;
+    }
+
+    .gallery-grid {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 1rem;
+    }
+
+    .product-image {
+        height: 180px;
+    }
+}
+
+/* About Section */
+.about {
+  padding: 5rem 0;
+  background: #ffff;
+  text-align: center;
+}
+
+.about__title {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.about__description {
+  max-width: 600px;
+  margin: 0 auto 2rem;
+}
+
+.about__cta {
+  display: inline-block;
+  padding: 1rem 2rem;
+  background: #333;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 4px;
+  transition: background 0.3s;
+}
+
+.about__cta:hover {
+  background: #444;
+}
+
+/* Contact Section */
+.contact {
+  padding: 5rem 0;
+}
+
+.contact__title {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 2rem;
+}
+
+.contact__form {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.contact__form-group {
+  margin-bottom: 1.5rem;
+}
+
+.contact__form-label {
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+.contact__form-input {
+  width: 100%;
+  padding: 0.8rem;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.contact__form-submit {
+  width: 100%;
+  padding: 1rem;
+  background: #333;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.contact__form-submit:hover {
+  background: #444;
+}
+
+/* Footer */
+.footer {
+  background: #333;
+  color: #fff;
+  padding: 1.5rem 0;
+  text-align: center;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .menu__items {
+    grid-template-columns: 1fr;
+  }
+  
+  .menu__item {
+    flex-direction: column;
+  }
+  
+  .menu__item-image,
+  .menu__item-content {
+    width: 100%;
+  }
+  
+  .hero__title {
+    font-size: 3rem;
+  }
+}
+
+.features__title {
+  text-align: center;
+  font-size: 2rem;
+  color: #ffff;
+  margin-bottom: 3rem;
+}
+
+.features__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  padding: 0 20px;
+}
+
+.feature {
+  text-align: center;
+  padding: 2rem;
+  background-color: #0000;
+  border-radius: 10px;
+  transition: transform 0.3s ease;
+}
+
+.feature:hover {
+  transform: translateY(-5px);
+}
+
+.feature i {
+  font-size: 2.5rem;
+  color: #000;
+  margin-bottom: 1rem;
+}
+
+.feature h3 {
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+}
+
+/* Reviews Section Styles */
+.reviews {
+  background-color: #f8f4f0;
+  padding: 5rem 0;
+  position: relative;
+}
+
+.reviews::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, #000, #777, #000);
+}
+
+.reviews__title {
+  text-align: center;
+  font-size: 2.5rem;
+  color: #000;
+  margin-bottom: 3rem;
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+}
+
+.reviews__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  margin-bottom: 4rem;
+}
+
+.review-card {
+  background: #fff;
+  border-radius: 15px;
+  padding: 2rem;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+  transition: transform 0.3s ease;
+}
+
+.review-card:hover {
+  transform: translateY(-5px);
+}
+
+.review-card__profile {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+
+.review-card__image {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  margin-right: 1rem;
+  object-fit: cover;
+}
+
+.review-card__info h3 {
+  font-size: 1.1rem;
+  margin-bottom: 0.3rem;
+  color: #333;
+}
+
+.review-card__stars {
+  color: #ffd700;
+  font-size: 0.9rem;
+}
+
+.review-card__text {
+  color: #666;
+  font-size: 1rem;
+  line-height: 1.6;
+  margin-bottom: 1rem;
+  font-style: italic;
+}
+
+.review-card__date {
+  display: block;
+  font-size: 0.8rem;
+  color: #999;
+}
+
+/* Review Form Styles */
+.review-form {
+  max-width: 600px;
+  margin: 0 auto;
+  background: #fff;
+  padding: 2rem;
+  border-radius: 15px;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+}
+
+.review-form__title {
+  text-align: center;
+  color: #000;
+  font-size: 1.8rem;
+  margin-bottom: 2rem;
+}
+
+.review-form__container {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.review-form__rating {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  justify-content: center;
+}
+
+.star-rating {
+  display: flex;
+  gap: 0.5rem;
+  color: #ffd700;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+.star-rating i:hover {
+  transform: scale(1.2);
+}
+
+.review-form__container textarea {
+  width: 100%;
+  height: 150px;
+  padding: 1rem;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  resize: vertical;
+  font-family: inherit;
+}
+
+.review-form__container button {
+  background: #111;
+  color: #fff;
+  border: none;
+  padding: 1rem 2rem;
+  border-radius: 8px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  align-self: center;
+}
+
+.review-form__container button:hover {
+  background: #a66615;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .reviews {
+    padding: 3rem 0;
+  }
+
+  .reviews__grid {
+    grid-template-columns: 1fr;
+    padding: 0 1rem;
+  }
+
+  .review-form {
+    margin: 0 1rem;
+  }

@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cookie Shop</title>
+  <link rel="stylesheet" href="11.css">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+</head>
+<body>
+  <header class="header">
+    <div class="container">
+      <div class="header__logo">Cookie Shop</div>
+      <nav class="header__nav">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="menu.html">Menu</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="html.html"><i class="fas fa-magnifying-glass"></i></a></li>
+          <li>
+            <div class="cart-icon">
+              <a href="#" id="cart-toggle"><i class="fas fa-shopping-cart"></i></a>
+              <span class="cart-count">0</span>
+            </div>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Cart Sidebar -->
+  <div class="cart-sidebar">
+    <div class="cart-header">
+      <h2>Shopping Cart</h2>
+      <button class="close-cart"><i class="fas fa-times"></i></button>
+    </div>
+    <div class="cart-items">
+      <!-- Cart items will be dynamically added here -->
+    </div>
+    <div class="cart-footer">
+      <div class="cart-total">
+        Total: <span>0฿</span>
+      </div>
+      <button class="checkout-btn">Checkout</button>
+    </div>
+  </div>
+
+  <main>
+    <section class="hero">
+      <div class="container">
+        <h1 class="hero__title">Soft Cookie</h1>
+        <p class="hero__description">Indulge in our homemade, artisanal cookies</p>
+        <a href="#" class="hero__cta">Explore Menu</a>
+      </div>
+    </section>
+    <section class="menu">
+      <div class="menu__items">
+        <div class="menu__item" data-id="1">
+          <img src="mucha.jpg" alt="Matcha Macadamia Cookie" class="menu__item-image">
+          <div class="menu__item-content">
+            <h3 class="menu__item-title">Matcha Macadamia Cookies</h3>
+            <p class="menu__item-description">Recommended menu that you must try</p>
+            <div class="menu__item-footer">
+              <span class="menu__item-price">39฿</span>
+              <button class="menu__item-add-to-cart">Add to Cart</button>
+            </div>
+          </div>
+        </div>
+        <div class="menu__item" data-id="2">
+          <img src="chip.jpeg" alt="Chocolate Chip Cookie" class="menu__item-image">
+          <div class="menu__item-content">
+            <h3 class="menu__item-title">Chocolate Chips Cookies</h3>
+            <p class="menu__item-description">Our classic chocolate chip cookie</p>
+            <div class="menu__item-footer">
+              <span class="menu__item-price">49฿</span>
+              <button class="menu__item-add-to-cart">Add to Cart</button>
+            </div>
+          </div>
+        </div>
+        <div class="menu__item" data-id="3">
+          <img src="ra.jpg" alt="Vanilla Cookie" class="menu__item-image">
+          <div class="menu__item-content">
+            <h3 class="menu__item-title">Vanilla Cookies</h3>
+            <p class="menu__item-description">Recommended menu that you must try</p>
+            <div class="menu__item-footer">
+              <span class="menu__item-price">29฿</span>
+              <button class="menu__item-add-to-cart">Add to Cart</button>
+            </div>
+          </div>
+        </div>
+        <div class="menu__item" data-id="4">
+          <img src="bow.jpg" alt="Brownie Cookie" class="menu__item-image">
+          <div class="menu__item-content">
+            <h3 class="menu__item-title">Brownie Cookies</h3>
+            <p class="menu__item-description">Recommended menu that you must try</p>
+            <div class="menu__item-footer">
+              <span class="menu__item-price">39฿</span>
+              <button class="menu__item-add-to-cart">Add to Cart</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <p class="footer__copyright">&copy; 2023 Cookie Shop. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <div class="overlay"></div>
+  <script src="cookie.js"></script>
+</body>
+</html>

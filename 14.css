@@ -1,0 +1,185 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+main {
+    padding: 40px 0;
+    text-align: center;
+}
+
+body {
+  padding-top: 80px;
+  line-height: 1.6;
+  color: #333;
+  background-color: #f4f4f4;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Header Styles */
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background: #fff;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  z-index: 1000;
+}
+
+.header .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 80px;
+}
+
+.header__logo {
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+.header__nav ul {
+  display: flex;
+  list-style: none;
+  gap: 2rem;
+}
+
+.header__nav a {
+  text-decoration: none;
+  color: #333;
+  font-weight: 500;
+  transition: color 0.3s;
+}
+
+.header__nav a:hover {
+  color: #666;
+}
+
+/* Search Section Styles */
+.h {
+  text-align: center;
+  margin: 2rem 0;
+  font-size: 2.5rem;
+  color: #333;
+}
+
+.search-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+form {
+  display: flex;
+  gap: 1rem;
+  width: 100%;
+  max-width: 500px;
+  margin: 0 auto;
+  padding: 1rem;
+}
+
+#tableName {
+  flex: 1;
+  padding: 0.75rem 2rem;
+  border: 2px solid #ddd;
+  border-radius: 25px;
+  font-size: 1rem;
+  transition: border-color 0.3s;
+}
+
+#tableName:focus {
+  outline: none;
+  border-color: #333;
+}
+
+button[type="submit"] {
+  padding: 0.75rem 1.5rem;
+  background-color: #333;
+  color: #fff;
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: background-color 0.3s;
+}
+
+button[type="submit"]:hover {
+  background-color: #444;
+}
+
+#resultContainer {
+  width: 100%;
+  max-width: 800px;
+  text-align: center;
+  margin: 2rem auto;
+  padding: 2 1rem;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .header .container {
+    height: 60px;
+  }
+
+  body {
+    padding-top: 60px;
+  }
+
+  .header__nav ul {
+    gap: 1rem;
+  }
+
+  .h {
+    font-size: 2rem;
+    margin: 1.5rem 0;
+  }
+
+  form {
+    flex-direction: column;
+    padding: 1rem;
+  }
+
+  button[type="submit"] {
+    width: 100%;
+  }
+}
+#resultContainer {
+    width: 80%;
+    margin: 30px auto;
+    overflow-x: auto;
+}
+ 
+#resultContainer table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 50px;
+    color: #333;
+}
+ 
+#resultContainer th,
+#resultContainer td {
+    padding: 12px;
+    border: 1px solid #333;
+    text-align: left;
+}
+ 
+#resultContainer th {
+    background-color: #333;
+    color: #fff;
+}
+ 
+#resultContainer tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
