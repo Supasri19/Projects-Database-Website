@@ -1,79 +1,24 @@
-document.addEventListener('DOMContentLoaded', function() {
-    const form = document.querySelector('form');
-    const searchInput = document.getElementById('tableName');
-    const resultContainer = document.getElementById('resultContainer');
+document.addEventListener('DOMContentLoaded', async () => {
+    try {
+        const response = await fetch('/Cookie'); // แก้ไข URL ตามความเหมาะสม
+        const cookies = await response.json();
 
-    // Prevent the default form submission
-    form.addEventListener('submit', function(e) {
-        e.preventDefault();
-        const searchTerm = searchInput.value.trim().toLowerCase();
-        searchTable(searchTerm);
-    });
+        const cookieItems = document.getElementById('cookieItems');
 
-    async function searchTable(searchTerm) {
-        try {
-            const response = await fetch('/all-data');
-            const data = await response.json();
-            resultContainer.innerHTML = ''; // Clear previous results
-
-            if (data.error) {
-                resultContainer.innerHTML = `<p>Error: ${data.error}</p>`;
-                return;
-            }
-
-            // Find matching tables
-            const matchingTables = Object.keys(data).filter(tableName => 
-                tableName.toLowerCase().includes(searchTerm)
-            );
-
-            if (matchingTables.length === 0) {
-                resultContainer.innerHTML = '<p>No matching tables found.</p>';
-                return;
-            }
-
-            // Display only matching tables
-            matchingTables.forEach(tableName => {
-                const tableTitle = document.createElement('h2');
-                tableTitle.textContent = tableName;
-                resultContainer.appendChild(tableTitle);
-
-                const table = document.createElement('table');
-                table.border = '1';
-                resultContainer.appendChild(table);
-
-                if (data[tableName].length > 0) {
-                    // Create header row
-                    const headerRow = document.createElement('tr');
-                    Object.keys(data[tableName][0]).forEach(key => {
-                        const th = document.createElement('th');
-                        th.textContent = key;
-                        headerRow.appendChild(th);
-                    });
-                    table.appendChild(headerRow);
-
-                    // Create data rows
-                    data[tableName].forEach(row => {
-                        const tr = document.createElement('tr');
-                        Object.values(row).forEach(value => {
-                            const td = document.createElement('td');
-                            td.textContent = value;
-                            tr.appendChild(td);
-                        });
-                        table.appendChild(tr);
-                    });
-                } else {
-                    const noDataRow = document.createElement('tr');
-                    const noDataCell = document.createElement('td');
-                    noDataCell.colSpan = Object.keys(data[tableName][0] || {}).length || 1;
-                    noDataCell.textContent = 'No data available';
-                    noDataRow.appendChild(noDataCell);
-                    table.appendChild(noDataRow);
-                }
-            });
-        } catch (error) {
-            console.error('Error:', error);
-            resultContainer.innerHTML = '<p>Error loading data</p>';
-        }
+        cookies.forEach((cookie) => {
+            cookieItems.innerHTML += `
+            <div class="menu__item" data-id="${cookie.Cookie_id}">
+            <img src="img/${cookie.Img}" class="menu__item-image" alt="${cookie.Cookie_name}">
+            <div class="menu__item-content">
+            <h3 class="menu__item-title">${cookie.Cookie_name}</h3>
+            <p class="menu__item-description">${cookie.Description}</p>
+            <div class="menu__item-footer">
+            <span class="menu__item-price">${cookie.Price}฿</span>
+            <button class="menu__item-add-to-cart">Add to Cart</button>
+            </div></div></div>`
+        });
+    } catch (error) {
+        console.error('Error fetching cookies:', error);
     }
-    
 });
+
